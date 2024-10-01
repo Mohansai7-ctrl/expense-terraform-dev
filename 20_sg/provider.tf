@@ -9,7 +9,7 @@ terraform {
     backend "s3" {
         bucket = "mohan-remote-state"
         dynamodb_table = "mohan-locking"
-        key = "sg-remote-state"
+        key = "expense-sg"
         region = "us-east-1"
     }
 }
