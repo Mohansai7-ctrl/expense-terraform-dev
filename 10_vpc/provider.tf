@@ -1,3 +1,9 @@
+#Terraform block consists of below:
+# required_providers
+# bucket
+# terraform version
+# terraform behaviour
+
 terraform {
     required_providers {
         aws = {
@@ -9,7 +15,7 @@ terraform {
     backend "s3" {
         bucket = "mohan-remote-state"
         dynamodb_table = "mohan-locking"
-        key = "vpc-remote-state"
+        key = "expense-vpc"
         region = "us-east-1"
     }
 }
