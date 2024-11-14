@@ -72,7 +72,7 @@ resource "aws_security_group_rule" "mysql_backend" { #mysql_backend == mysql all
     from_port = 3306  #as backend to enter mysql, mysql ports 3306 needs to be opened. == backend is a source connecting to mysql. accepting ports 
     to_port = 3306  #Application Port
     protocol = "tcp"
-    source_security_group_id = module.backend_sg.id
+    source_security_group_id = module.backend_sg.id  #To use this attribute id, in root module outputs.tf it should define first, in outputs it will be used as resource_type.resource_name.attribute
     security_group_id = module.mysql_sg.id
 
 }

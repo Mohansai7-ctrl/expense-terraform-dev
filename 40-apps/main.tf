@@ -89,7 +89,8 @@ module "records" {
     records = [
         {
             records = [
-                module.mysql.private_ip
+                module.mysql.private_ip   ##To use this attribute private_ip, in root module outputs.tf it should define first, in outputs it will be used as resource_type.resource_name.attribute.
+                ##in child module, not necessary to include the same output with value name == output name of root module.
             ]
             name = "mysql"   #Though we provided name as mysql, but it will provide as mysql.zone_name terraform comgines both zone_name and name.
             type = "A"
